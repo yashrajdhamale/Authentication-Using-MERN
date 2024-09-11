@@ -1,0 +1,88 @@
+/* Container for the entire form */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: #f7f7f7;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Centered form heading */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Styling the form */
+.login-form {
+  width: 100%;
+}
+
+/* Form group for inputs and labels */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus effect for inputs */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Button styling */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+    margin: 50px auto;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+  }
+}

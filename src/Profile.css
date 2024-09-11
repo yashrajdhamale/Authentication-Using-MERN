@@ -1,0 +1,52 @@
+/* Container for the profile page */
+.profile-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 100px auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Profile heading */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Profile details */
+.profile-details {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Profile paragraph */
+.profile-details p {
+    margin: 10px 0;
+}
+
+/* Loading message */
+.loading {
+    font-size: 16px;
+    color: #888;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 20px;
+        margin: 50px auto;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .profile-details {
+        font-size: 16px;
+    }
+}
