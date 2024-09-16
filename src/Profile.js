@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Profile.css'; // Make sure you link the CSS file
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = (props) => {
     const [profile, setProfile] = useState(null);
@@ -21,7 +21,6 @@ const Profile = (props) => {
             console.log(data);
             if (!res.ok) {
                 navigate('/login');
-                // throw new Error(data.error);
             }
 
             setProfile(data.profile);
@@ -30,13 +29,29 @@ const Profile = (props) => {
         }
     };
 
+    const loadDashboard = async () => {
+        const token = localStorage.getItem("token");
+        try {
+            const res = await fetch('http://localhost:3001/dashboard', {
+                method: 'GET',
+                headers:{
+                    "Authorization": `Bearer ${token}`,
+                }
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                navigate('/login');
+            }
+
+            navigate('/dashboard');
+        } catch (error) {
+            console.error('Error loading dashboard:', error);
+        }
+    };
+
     const handleLogout = () => {
-        // Remove the token from localStorage
         localStorage.removeItem('token');
-
-        // Redirect to the login page
-        navigate('/login');
-
+        navigate('/home');
         props.setlogin(false);
     };
 
@@ -46,7 +61,7 @@ const Profile = (props) => {
 
     return (
         <div className="profile-container">
-            <h2>Profile</h2>
+            <h2 className="profile-heading">Profile</h2>
             {profile ? (
                 <div className="profile-details">
                     <p>Username: {profile.username}</p>
@@ -55,8 +70,10 @@ const Profile = (props) => {
             ) : (
                 <p className="loading">Loading...</p>
             )}
-            {/* <Link to="/edit">Edit Profile</Link> */}
-            <button onClick={handleLogout}>Logout</button>
+
+            <button className="profile-button" onClick={handleLogout}>Logout</button>
+            <button className="profile-button dashboard-button" onClick={loadDashboard}>Dashboard</button>
+            
         </div>
     );
 };

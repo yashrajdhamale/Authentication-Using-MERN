@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = (props) => {
-    
-
+    const navigate = useNavigate();
+    const[Error, setError] = useState();
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -34,7 +35,7 @@ const Login = (props) => {
             });
 
             const data = await res.json();
-            
+
             if (!res.ok) {
                 throw new Error(data.error);
             }
@@ -42,9 +43,12 @@ const Login = (props) => {
             // Store the token in localStorage
             localStorage.setItem("token", data.token);
             props.setlogin(true);
-            window.alert("Login Successful");
+            
+            setError("Login Successful");
+            navigate('/');
         } catch (error) {
-            window.alert(`Error: ${error.message}`);
+            // window.alert(`Error: ${error.message}`);
+            setError(`${error.message}`);
         }
     };
 
@@ -73,6 +77,7 @@ const Login = (props) => {
                         onChange={handleChange}
                         required
                     />
+                    <p >{Error}</p>
                 </div>
                 <button type="submit">Login</button>
             </form>

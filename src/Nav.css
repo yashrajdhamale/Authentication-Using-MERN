@@ -1,0 +1,93 @@
+/* Home Page Styling */
+#home {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Logo Styling */
+#home a img {
+  height: 50px; /* Adjust height as needed */
+  /* margin-right: auto; */
+}
+
+/* Hover effect for logo */
+#home a:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Navigation Bar Styling */
+#home nav {
+  background-color: #333;
+  padding: 15px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Unordered List for Navigation Links */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1; /* Allow the ul to grow and push items to the end */
+}
+
+/* Individual List Item */
+nav ul li {
+  margin-right: 20px;
+}
+
+/* Links inside Navigation */
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Hover State for Links */
+nav ul li a:hover {
+  background-color: #555;
+  color: #f5f5f5;
+}
+
+/* Responsive Styling for Mobile Devices */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  #home img {
+    height: 40px; /* Adjust logo size for smaller screens */
+  }
+}
+
+/* Responsive Styling for Smaller Mobile Devices */
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  #home img {
+    height: 35px;
+  }
+}

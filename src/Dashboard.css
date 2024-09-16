@@ -1,0 +1,71 @@
+/* Container for the dashboard page */
+.dashboard-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Dashboard heading */
+.dashboard-heading {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Dashboard details */
+.dashboard-details {
+    font-size: 18px;
+    color: #555;
+    text-align: left;
+}
+
+/* Dashboard paragraph */
+.dashboard-details p {
+    margin: 10px 0;
+}
+
+/* Edit button */
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for edit button */
+.edit-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 15px;
+        margin: 30px auto;
+    }
+
+    .dashboard-heading {
+        font-size: 24px;
+    }
+
+    .dashboard-details {
+        font-size: 16px;
+    }
+
+    .edit-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+    }
+}
